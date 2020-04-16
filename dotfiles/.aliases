@@ -10,8 +10,10 @@ alias jn='jupyter notebook'
 
 alias vimconfig="vim ~/.vimrc"
 alias zshconfig="vim ~/.zshrc"
+alias zshthemeconfig="vim ~/.oh-my-zsh/themes/theo.zsh-theme"
 
 alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias la='ls -lah'
 
+alias gs='git status'
