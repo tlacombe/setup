@@ -1,25 +1,37 @@
-" All system-wide defaults are set in $VIMRUNTIME/debian.vim and sourced by
-" the call to :runtime you can find below.  If you wish to change any of those
-" settings, you should do it in this file (/etc/vim/vimrc), since debian.vim
-" will be overwritten everytime an upgrade of the vim packages is performed.
-" It is recommended to make changes after sourcing debian.vim since it alters
-" the value of the 'compatible' option.
-
 " This line should not be removed as it ensures that various options are
 " properly set to work with the Vim-related packages available in Debian.
+" Remark: set to nocompatible.
 runtime! debian.vim
+filetype off   " required. See Vim and Python - a Match in Heaven.
 
-" Vim will load $VIMRUNTIME/defaults.vim if the user does not have a vimrc.
-" This happens after /etc/vim/vimrc(.local) are loaded, so it will override
-" any settings in these files.
-" If you don't want that to happen, uncomment the below line to prevent
-" defaults.vim from being loaded.
-" let g:skip_defaults_vim = 1
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+" For better indentation
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'ycm-core/YouCompleteMe'
+" Vim check syntax
+Plugin 'vim-syntastic/syntastic'
+" Folding for Python
+Plugin 'tmhedberg/SimpylFold'
+" Add PEP8 checking
+Plugin 'nvie/vim-flake8'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
-" Uncomment the next line to make Vim more Vi-compatible
-" NOTE: debian.vim sets 'nocompatible'.  Setting 'compatible' changes numerous
-" options, so any other options should be set AFTER setting 'compatible'.
-"set compatible
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+" Enable folding with the spacebar
+nnoremap <space> za
+" To see the docstring while folding
+let g:SimpylFold_docstring_preview=1
+" Makes the code pretty
+let python_highlight_all=1
+
 
 " Vim5 and later versions support syntax highlighting. Uncommenting the next
 " line enables syntax highlighting by default.
@@ -27,11 +39,21 @@ if has("syntax")
   syntax on
 endif
 
+"python with virtualenv support  " SEEMS BUGGED
+"py << EOF
+"import os
+"import sys
+"if 'VIRTUAL_ENV' in os.environ:
+"  project_base_dir = os.environ['VIRTUAL_ENV']
+"  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+"  execfile(activate_this, dict(__file__=activate_this))
+"EOF
+
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
 "set background=dark
 
-" Uncomment the following to have Vim jump to the last position when
+" To have Vim jump to the last position when
 " reopening a file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -54,6 +76,15 @@ set autowrite		" Automatically save before commands like :next and :make
 set hidden		" Hide buffers when they are abandoned
 set mouse=a		" Enable mouse usage (all modes)
 
+
+" quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+
+
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
@@ -68,7 +99,9 @@ au BufNewFile,BufRead *.py
     \ set autoindent |
     \ set fileformat=unix |
     \ set nu |
-    \ set encoding=utf-8
+    \ set rnu |
+    \ set encoding=utf-8 |
+    \ set textwidth=119  " for max line control
 
 
 " Get off my lawn - helpful when learning Vim :)
@@ -76,3 +109,7 @@ nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
+
+" to insert blank line without entering insert mode, press ENTER / shift+ENTER.
+map <Enter> o<ESC>
+map <S-Enter> O<ESC>
