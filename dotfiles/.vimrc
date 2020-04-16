@@ -101,6 +101,7 @@ au BufNewFile,BufRead *.py
     \ set nu |
     \ set rnu |
     \ set encoding=utf-8 |
+    \ highlight LineNr ctermfg=grey |
     \ set textwidth=119  " for max line control
 
 
