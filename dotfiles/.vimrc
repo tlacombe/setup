@@ -11,13 +11,20 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 " For better indentation
 Plugin 'vim-scripts/indentpython.vim'
+" For auto-completion, warning, installation requires some additional
+" packages.
 Plugin 'ycm-core/YouCompleteMe'
 " Vim check syntax
-Plugin 'vim-syntastic/syntastic'
+" Plugin 'vim-syntastic/syntastic'
 " Folding for Python
 Plugin 'tmhedberg/SimpylFold'
 " Add PEP8 checking
 Plugin 'nvie/vim-flake8'
+" Add async syntax with ALE instead of syntastic
+" Plugin 'dense-analysis/ale'
+" Add gruvbox/solarized theme for Python
+" Plugin 'morhetz/gruvbox'
+" Plugin 'lifepillar/vim-solarized8'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -49,15 +56,16 @@ endif
 "  execfile(activate_this, dict(__file__=activate_this))
 "EOF
 
-" If using a dark background within the editing area and syntax highlighting
-" turn on this option as well
-"set background=dark
+set background=dark
+" colorscheme solarized8
 
 " To have Vim jump to the last position when
 " reopening a file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
+
+
 
 " Uncomment the following to have Vim load indentation rules and plugins
 " according to the detected filetype.
@@ -86,9 +94,9 @@ nnoremap <C-l> <C-w>l
 
 
 " Source a global configuration file if available
-if filereadable("/etc/vim/vimrc.local")
-  source /etc/vim/vimrc.local
-endif
+"if filereadable("/etc/vim/vimrc.local")
+"  source /etc/vim/vimrc.local
+"endif
 
 " For python indentation and blablabla
 au BufNewFile,BufRead *.py
@@ -103,7 +111,6 @@ au BufNewFile,BufRead *.py
     \ set encoding=utf-8 |
     \ highlight LineNr ctermfg=grey |
     \ set textwidth=119  " for max line control
-
 
 " Get off my lawn - helpful when learning Vim :)
 nnoremap <Left> :echoe "Use h"<CR>
