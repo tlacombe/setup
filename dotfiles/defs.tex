@@ -1,0 +1,158 @@
+% Defs I routinely use in files. 
+% Not a symlink yet. Last update: Feb 8th, 2021.
+
+
+%%% Letters and numbers
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\E}{\mathbb{E}}
+\renewcommand{\P}{P}%\mathbb{P}}  % By default, \P is an ugly paragraph symbol.
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\U}{\mathbb{U}}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\WW}{\mathcal{W}}
+\newcommand{\XX}{\mathcal{X}}
+\newcommand{\YY}{\mathcal{Y}}
+\newcommand{\DD}{\mathcal{D}}
+\newcommand{\PP}{\mathcal{P}}
+\newcommand{\EE}{\mathcal{E}}
+\newcommand{\HH}{\mathcal{H}}
+\newcommand{\KK}{\mathcal{K}}
+\newcommand{\MM}{\mathcal{M}}
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\FF}{\mathcal{F}}
+\newcommand{\GG}{\mathcal{G}}
+\newcommand{\LL}{\mathcal{L}}
+\renewcommand{\SS}{\mathcal{S}}
+\newcommand{\BB}{\mathcal{B}}
+\renewcommand{\AA}{\mathcal{A}}
+\newcommand{\QQ}{\mathcal{Q}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\OO}{\mathcal{O}}
+
+\newcommand{\bmu}{\bm{\mu}}
+\newcommand{\btau}{\bm{\tau}}
+
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bsm}{\mathbf{m}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\bz}{\mathbf{z}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bk}{\mathbf{k}}
+
+\newcommand{\bS}{\mathbf{S}}
+\newcommand{\bX}{\mathbf{X}}
+\newcommand{\bL}{\mathbf{L}}
+\newcommand{\bP}{\mathbf{P}}
+
+\newcommand{\ones}{\mathbf{1}}
+
+\renewcommand{\epsilon}{\varepsilon}
+
+
+%%% General maths notations
+\newcommand{\dd}{\mathrm{d}}  % Integration
+\newcommand{\prob}{\mathbb{P}}  % Proba of something
+\newcommand{\perm}{\mathfrak{S}}  % Set of permutations
+\newcommand{\diam}{\mathrm{diam}}  % Diam of a set
+\newcommand{\supp}{\mathrm{spt}}
+\newcommand{\mean}{\mathrm{mean}}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\dist}{\mathrm{dist}}
+\newcommand{\linf}{\ell^\infty}
+\newcommand{\Lip}{\mathrm{Lip}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\reshape}{\overrightarrow}
+\newcommand{\card}{\mathrm{card}}
+\newcommand{\vspan}{\mathrm{span}}
+\newcommand{\conv}{\mathrm{conv}}
+\newcommand{\defeq}{\vcentcolon=}
+\newcommand{\eqdef}{=\vcentcolon}
+\newcommand{\Div}{\mathrm{Div}}
+\newcommand{\cl}{\mathrm{cl}}
+
+\newcommand{\p}[1]{\left(#1\right)} % parenthesing.
+
+%%% Mesure related notations
+\newcommand{\cvvague}{\xrightarrow{v}}
+\newcommand{\cvweak}{\xrightarrow{w}}
+\newcommand{\cvu}{\xrightarrow{\|\cdot\|_\infty}}
+
+
+%%% TDA related notations
+\newcommand{\dgm}{\mathrm{Dgm}}
+\newcommand{\Pers}{\mathrm{Pers}}  % persistence pour les diagrammes (ie distance au diagramme vide)
+\newcommand{\pers}{\mathrm{pers}}  % persistence pour les points (ie distance à la diagonale)
+\newcommand{\upperdiag}{\Omega} %{\R^2_>}  % The open upper half plane
+\newcommand{\groundspace}{\overline{\upperdiag}}   % The closed upper half plane
+\newcommand{\thediag}{{\partial \Omega}}  % Boundary of the half plane
+\newcommand{\emptydgm}{\mathbf{0}}  %{\emptyset}
+\newcommand{\Dp}{\OT_p}  % distance between PD in the Figalli and Gigli formalism
+\newcommand{\Dinf}{\OT_\infty}  % W_infty distance between PD in the F&G formalism
+\newcommand{\pdspace}{\DD}  % The space of persistence diagrams in its generality
+\newcommand{\projop}{\mathbf{R}}
+\newcommand{\projdiag}{\mathbf{p}_\thediag}
+\newcommand{\gdist}{d}
+\newcommand{\gcost}{c}
+\newcommand{\pddist}{\mathbf{d}}
+\newcommand{\dB}{\pddist_{\infty}}
+
+%%% OT related notations
+\newcommand{\round}{\mathcal{R}}
+\newcommand{\plan}{\pi}  % notation for a transport plan
+\newcommand{\pix}{\pi^{(1)}}  % first marginal of a transport plan \pi
+\newcommand{\piy}{\pi^{(2)}}
+
+\newcommand{\Adm}{\mathrm{Adm}}  % Set of admissible transport plans
+\newcommand{\Opt}{\mathrm{Opt}}  % Set of optimal transport plans
+
+\newcommand{\Smin}{\mathrm{Smin}}
+\newcommand{\aprox}{\mathrm{aprox}}
+
+\newcommand{\KL}{\mathrm{KL}}
+\newcommand{\MMD}{\mathrm{MMD}}
+\newcommand{\TV}{\mathrm{TV}}
+
+\newcommand{\OT}{\mathrm{OT}}
+
+\newcommand{\pioffdiag}{\pi^{\upperdiag \to \upperdiag}}
+\newcommand{\pitodiag}{\pi^{\upperdiag \to \thediag}}
+\newcommand{\pifromdiag}{\pi^{\thediag \to \upperdiag}}
+\newcommand{\pidiagtodiag}{\pi^{\thediag \to \thediag}}
+
+\newcommand{\pitrivial}{\pi_{\text{trivial}}}
+\newcommand{\picross}{\pi_{\mu \otimes \nu}}
+
+
+%%% Maths operators
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\minimize}{minimize}
+
+%%% Useful additional shortcuts
+\newcommand{\mtot}{{m_{\mathrm{tot}}}}
+\newcommand{\Cp}{\mathcal{C}^0_{b,p}}
+\newcommand{\gudhi}{\href{https://gudhi.inria.fr/}{\texttt{Gudhi}}}
+\newcommand{\pot}{\href{https://pot.readthedocs.io/en/stable/}{\texttt{POT}~}}
+\newcommand{\Cech}{\v Cech}
+\newcommand{\PersLay}{\textsc{PersLay}}
+\newcommand{\proj}{\mathrm{proj}}
+\newcommand{\shift}{\mathrm{shift}}
+
+
+\newcommand{\exfig}{\includegraphics[scale=1]{example-image-a}}
+
+%%% LaTeX shortcut
+\newcommand{\emphindex}[1]{\emph{#1}\index{#1}}
+
+
+%%% Misc
+\newcommand{\todo}[1]{\textbf{\textcolor{red}{#1}}}
