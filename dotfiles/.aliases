@@ -17,3 +17,5 @@ alias ll='ls -lh'
 alias la='ls -lah'
 
 alias gs='git status'
+
+alias gitoken='cat ~/git/.token.txt | xclip -selection clipboard'
