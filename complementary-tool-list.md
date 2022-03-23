@@ -19,6 +19,11 @@ Info found <a href='https://askubuntu.com/questions/966887/switching-between-win
 ```
 gsettings set org.gnome.shell.extensions.dash-to-dock scroll-action 'cycle-windows'
 ```
+but this may not work in some situation (no idea why). Using 
+```
+dconf write /org/gnome/shell/extensions/dash-to-dock/scroll-action "'cycle-windows'"
+```
+make it works then.
 
 # Firefox extensions
 ## Markdown Viewer.
@@ -56,3 +61,24 @@ Although `vim` might provide powerful editing for latex files, for now I am real
 TBC.
 ## Add-on:
 - Synchronization with Google Agenda is very useful. Details to be added.
+
+# Text editor : Gedit
+## Config : 
+Solarized dark if the screen is anti-reflective, Classic otherwise (light reflects too much on dark background imho). 
+
+# Bibliography manager : Zotero (with sync with Firefox). 
+
+To install it properly on ubuntu, follow the instructions [there](https://www.zotero.org/support/installation). For small details: copy the repo that contains the `zotero` script doing
+```
+sudo cp -r Zotero_linux-x86_64 /opt/zotero   
+```
+then
+```
+cd /opt/zotero/
+sudo ./set_launcher_icon
+ln -s /opt/zotero/zotero.desktop ~/.local/share/applications/zotero.desktop
+```
+
+# Files sync manager : Dropbox
+
+Todo.
